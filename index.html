@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>methods : nextElementSibling & previousElementSibling</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .elem {
+            width: 100px;
+            height: 100px;
+            font-weight: bolder;
+            font-size: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>This Exemple Shows How nextElementSibling and previousElementSibling Works</h1>
+
+    <div class="wrapper">
+        <div class="elem i1">1</div>
+        <div class="elem i2">2</div>
+        <div class="elem i3">3</div>
+        <div class="elem i4">4</div>
+    </div>
+    <br>
+    <div id="btn"> &#10095;</div>
+    <br>
+    <div id="btnPrev"> &#10094;</div>
+
+
+    <script>
+        var i1 = document.querySelector('.i1');
+        var i4 = document.querySelector('.i4');
+        var current = i1;
+
+        const btn = document.getElementById('btn').addEventListener('click', () => {
+                if (current.nextElementSibling) {
+                    current.style.display = "none";
+                    current = current.nextElementSibling;
+                    current.style.display = "block";
+                    current.classList.add('fade');
+
+                } else {
+                    current.style.display = "none";
+                    current = i1;
+                    current.style.display = "block";
+                };
+
+            })
+            // --
+        const btnPrev = document.getElementById('btnPrev').addEventListener('click', () => {
+            if (current.previousElementSibling) {
+                current.style.display = "none";
+                current = current.previousElementSibling;
+                current.style.display = "block";
+                current.classList.add('fade');
+
+            } else {
+                current.style.display = "none";
+                current = i4;
+                current.style.display = "block";
+            };
+
+        })
+    </script>
+</body>
+
+</html>
