@@ -18,7 +18,7 @@
 
 <body>
     <h1>This Exemple Shows How nextElementSibling and previousElementSibling Works</h1>
-
+    <h2 id="time" class="s">5</h2>
     <div class="wrapper">
         <div class="elem i1">1</div>
         <div class="elem i2">2</div>
@@ -29,6 +29,10 @@
     <div id="btn"> &#10095;</div>
     <br>
     <div id="btnPrev"> &#10094;</div>
+
+
+
+
 
 
     <script>
@@ -54,7 +58,16 @@
 
         }
         setInterval(next, 6000);
-        // new comment : (git test)
+
+        // add timer
+        const time = document.getElementById('time');
+        var i = 5;
+        setInterval(() => {
+
+            time.innerHTML = i;
+            i--;
+            if (i === -1) i = 5;
+        }, 1000);
 
 
 
