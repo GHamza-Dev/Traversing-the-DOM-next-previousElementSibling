@@ -36,21 +36,31 @@
         var i4 = document.querySelector('.i4');
         var current = i1;
 
-        const btn = document.getElementById('btn').addEventListener('click', () => {
-                if (current.nextElementSibling) {
-                    current.style.display = "none";
-                    current = current.nextElementSibling;
-                    current.style.display = "block";
-                    current.classList.add('fade');
+        const btn = document.getElementById('btn').addEventListener('click', next);
 
-                } else {
-                    current.style.display = "none";
-                    current = i1;
-                    current.style.display = "block";
-                };
+        function next() {
+            if (current.nextElementSibling) {
+                current.style.display = "none";
+                current = current.nextElementSibling;
+                current.style.display = "block";
+                current.classList.add('fade');
 
-            })
-            // -- 
+            } else {
+                current.style.display = "none";
+                current = i1;
+                current.style.display = "block";
+            };
+
+        }
+
+
+
+
+
+
+
+
+        // -- 
         const btnPrev = document.getElementById('btnPrev').addEventListener('click', () => {
             if (current.previousElementSibling) {
                 current.style.display = "none";
