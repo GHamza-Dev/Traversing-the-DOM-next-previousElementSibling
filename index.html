@@ -29,70 +29,18 @@
     <div id="btn"> &#10095;</div>
     <br>
     <div id="btnPrev"> &#10094;</div>
+    <hr>
+    <p>You may wante to chacke the link below for another cool demo</p>
+    <a href="https://full-screen-images-slider.vercel.app/">
+        click here.
+    </a><br>
+    <a href="https://full-screen-images-slider.vercel.app/">
+        <img src="demo.PNG" alt="demo" width="400">
+    </a>
 
 
 
-
-
-
-    <script>
-        var i1 = document.querySelector('.i1');
-        var i4 = document.querySelector('.i4');
-        var current = i1;
-
-        const btn = document.getElementById('btn').addEventListener('click', next);
-
-        function next() {
-            if (current.nextElementSibling) {
-                current.style.display = "none";
-                current = current.nextElementSibling;
-                current.style.display = "block";
-                current.classList.add('fade');
-
-            } else {
-                current.style.display = "none";
-                current = i1;
-                current.style.display = "block";
-            }
-
-
-        }
-        setInterval(next, 6000);
-
-        // add timer
-        const time = document.getElementById('time');
-        var i = 5;
-        setInterval(() => {
-
-            time.innerHTML = i;
-            i--;
-            if (i === -1) i = 5;
-        }, 1000);
-
-
-
-
-
-
-
-
-
-        // -- 
-        const btnPrev = document.getElementById('btnPrev').addEventListener('click', () => {
-            if (current.previousElementSibling) {
-                current.style.display = "none";
-                current = current.previousElementSibling;
-                current.style.display = "block";
-                current.classList.add('fade');
-
-            } else {
-                current.style.display = "none";
-                current = i4;
-                current.style.display = "block";
-            };
-
-        })
-    </script>
+    <script src="index.js"></script>
 </body>
 
 </html>
